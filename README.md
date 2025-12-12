@@ -24,6 +24,15 @@ npm install
 2. Create `.env` file from example:
 ```bash
 cp .env.example .env
+```
+
+3. Configure your environment variables in `.env`:
+```
+PORT=3000
+MONGODB_URI=mongodb://localhost:27017/product_management
+JWT_SECRET=your_super_secret_jwt_key
+JWT_EXPIRES_IN=7d
+```
 
 4. Start MongoDB (make sure MongoDB is running)
 
@@ -36,13 +45,17 @@ npm run dev
 npm start
 ```
 
-## Technologies Used
+## API Endpoints
+### Authentication
+| POST | `/api/auth/register` 
+| POST | `/api/auth/login`
+| GET | `/api/auth/me`
 
-- Node.js
-- Express.js
-- MongoDB with Mongoose
-- JWT for authentication
-- bcryptjs for password hashing
-- Multer for file uploads
-- express-validator for input validation
+### Products
+| GET | `/api/products` 
+| GET | `/api/products/my-products`
+| GET | `/api/products/:id`
+| POST | `/api/products` 
+| PUT | `/api/products/:id` 
+| DELETE | `/api/products/:id`
 
