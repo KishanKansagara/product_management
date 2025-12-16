@@ -78,10 +78,6 @@ router.get('/my-products', getMyProducts);
 router.get('/getOneProduct/:id',getProduct)
 router.put('/updateProduct/:id',upload.single('image'), updateProductValidation, updateProduct)
 router.delete("/deleteProduct",deleteProduct)
-// router.route('/:id')
-//     .get(getProduct)
-//     .put(upload.single('image'), updateProductValidation, updateProduct)
-//     .delete(deleteProduct);
 
 module.exports = router;
 
